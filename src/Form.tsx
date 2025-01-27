@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import InputMask from 'react-input-mask';
 import './App.css';
 
 const Form = ({
@@ -33,7 +34,13 @@ const Form = ({
             </div>
             <div className="form-inner">
                 <label>CPF: </label>
-                <input type="text" value={cpf} onChange={(e) => setCpf(e.target.value)} required />
+                <InputMask
+                    mask="999.999.999-99"
+                    value={cpf}
+                    onChange={(e: any) => setCpf(e.target.value)}
+                >
+                    {(inputProps: any) => <input {...inputProps} type="text" required />}
+                </InputMask>
             </div>
             <div className="form-inner">
                 <label className="checkbox-label">
@@ -43,7 +50,13 @@ const Form = ({
                 {showCNPJ && (
                     <div>
                         <label>CNPJ: </label>
-                        <input type="text" value={cnpj} onChange={(e) => setCnpj(e.target.value)} />
+                        <InputMask
+                            mask="99.999.999/9999-99"
+                            value={cnpj}
+                            onChange={(e: any) => setCnpj(e.target.value)}
+                        >
+                            {(inputProps: any) => <input {...inputProps} type="text" required />}
+                        </InputMask>
                     </div>
                 )}
             </div>
@@ -55,7 +68,7 @@ const Form = ({
                 {showNotebok && (
                     <div>
                         <label>Patrimônio: </label>
-                        <input type="number" value={notebook} onChange={(e) => setNotebook(e.target.value)} required/>
+                        <input type="number" value={notebook} onChange={(e) => setNotebook(e.target.value)} required />
                     </div>
                 )}
             </div>
@@ -67,7 +80,7 @@ const Form = ({
                 {showMonitor && (
                     <div>
                         <label>Patrimônio: </label>
-                        <input type="number" value={monitor} onChange={(e) => setMonitor(e.target.value)} required/>
+                        <input type="number" value={monitor} onChange={(e) => setMonitor(e.target.value)} required />
                     </div>
                 )}
             </div>
@@ -79,7 +92,7 @@ const Form = ({
                 {showCelular && (
                     <div>
                         <label>Patrimônio: </label>
-                        <input type="number" value={celular} onChange={(e) => setCelular(e.target.value)} required/>
+                        <input type="number" value={celular} onChange={(e) => setCelular(e.target.value)} required />
                     </div>
                 )}
             </div>
