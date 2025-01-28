@@ -7,6 +7,7 @@ export const termoTexto = (
   celular: string,
   mouse: string,
   teclado: string,
+  outros: string,
 ) => {
   const safeValue = (value: any, label: any) => value ? `${label} ${value}` : '';
   const safeValueTxt = (value: any, label: any) => value ? `${label} ${nome}` : '';
@@ -45,6 +46,7 @@ ${safeValue(monitor, 'Patrimônio Monitor N:')}
 ${safeValue(celular, 'Patrimônio Celular N:')}
 ${safeValue(replaceTrueForMouse(mouse), 'Mouse:')}
 ${safeValue(replaceTrueForTeclado(teclado), 'Teclado:')}
+${safeValue(outros, 'Outros equipamentos:')}
 
 Contratação de ${nome}, ${safeValue(cnpj, 'CNPJ:')} ${safeValueTxt(cnpj, 'sendo representada por')} CPF: ${cpf}, responsabiliza-se por eventuais danos causados diretamente a Afs Locações Ltda ou a terceiros, decorrentes de minha culpa ou dolo, durante todo o período em que o(s) bem (ns) acima especificados ficarem sob a minha guarda e utilização, bem como declaro ciência das seguintes condições:
 

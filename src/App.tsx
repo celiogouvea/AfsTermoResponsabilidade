@@ -11,6 +11,7 @@ const App = () => {
     const [celular, setCelular] = useState('');
     const [mouse, setMouse] = useState(false);
     const [teclado, setTeclado] = useState(false);
+    const [outros, setOutros]= useState('');
 
     const handleGeneratePDF = () => {
         
@@ -22,7 +23,8 @@ const App = () => {
             monitor,
             celular,
             mouse,
-            teclado
+            teclado,
+            outros
         };
         
         createPDF(data).then(pdfBuffer => {
@@ -57,6 +59,8 @@ const App = () => {
             setMouse={setMouse}
             teclado={teclado}
             setTeclado={setTeclado}
+            outros={outros}
+            setOutros={setOutros}
             handleGeneratePDF={handleGeneratePDF}
         />
     );

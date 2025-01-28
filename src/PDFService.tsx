@@ -80,7 +80,8 @@ export const createPDF = async (data: any) => {
             data.monitor,
             data.celular,
             data.mouse,
-            data.teclado
+            data.teclado,
+            data.outros
         );
         const formattedText = texto.replace(/<[^>]+>/g, '').replace(/ +(?= )/g, '');
 
